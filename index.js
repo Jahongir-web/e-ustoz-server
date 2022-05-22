@@ -87,7 +87,6 @@ app.get("/questions/subject", async (req, res) => {
     res.send({data}).status(200)
 })
 
-
 app.post("/answer", async (req, res) => {
     const {content, id, question_id} = req.body
     await rows(query.CONFIRM_ANSWER, question_id*1)
@@ -135,7 +134,6 @@ app.get("/students", async (req, res) => {
     const students = await rows(query.STUDENTS)
     res.send({students}).status(200)
 })
-
 
 app.post("/student/delete", async (req, res) => {
     const { id } = req.headers
